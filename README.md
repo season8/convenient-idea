@@ -7,3 +7,6 @@
 **git**
 + [git 自动切换 项目用户配置](./git/smart-git-user.md)
 + [git 自动切换 远程仓库密钥](./git/smart-git-ssh.md)
+
+**电脑**
++ [快速开关 windows 输入法双拼模式](./computer/double-pinyin-switch.md)
