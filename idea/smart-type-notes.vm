@@ -1,0 +1,38 @@
+#set($personalName="write personal user name here")
+#set($companyName="write company user name here")
+## write your company project package prefixes here
+#set($companyPackagePrefixes=['com.xxx','org.xxx'])
+## customize your note here
+#macro(notes $company)
+/**
+* $description
+    #if(${company})
+    * @author $companyName
+    * @date ${DATE}
+    #else
+    * @author $personalName
+        ## * @since
+    #end
+*/
+#end
+## check if it's a company project
+#set($package=${PACKAGE_NAME})
+#set($companyPackagePrefix='')
+#set($company=false)
+#foreach($companyPackagePrefix in $companyPackagePrefixes)
+    #set($p='')
+    #set($n=0)
+    #set($i='')
+    #foreach($i in $package.toCharArray())
+        #set($p=$p+$i)
+        #set($n=$n+1)
+        #if($n >= $companyPackagePrefix.length())
+            #break
+        #end
+    #end
+    #if($p == $companyPackagePrefix)
+        #set($company=true)
+        #break
+    #end
+#end
+#notes($company)
