@@ -15,8 +15,8 @@ cd ~/
 cat .gitconfig
 # .gitconfig 内容如下
 [user]
-	email = chengj@133.cn
-	name = chengjie
+	email = season8@github.com
+	name = season8
 ```
 2. 根据 git user 数量，复制 .gitconfig 并重命名为多个配置文件
 3. 修改不同配置文件内的 name 和 email(github 的 email 推荐使用 no-reply email)
