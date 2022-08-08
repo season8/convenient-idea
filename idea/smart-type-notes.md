@@ -24,7 +24,12 @@
 1. 依次打开 IDEA->File->Settings->Editor->File and code templates
 2. 选中 Includes Tab选项页面，选择 File Header
 3. 复制 [smart-type-notes](./smart-type-notes.vm) 内容并粘贴到 File Header
-4. 按 文件内容修改 **_personalName_**、**_companyName_**、**_companyPackagePrefixes_**、**_notes_**，保存
+4. 按 文件内容修改:
+   + **_personalName：_** 个人用户名
+   + **_companyName：_** 公司用户名
+   + **_companyPackagePrefixes：_** 公司项目包名，可配置多个
+   + **_companyProjects：_** 公司项目项目名，可多个
+   + **_notes：_** 注释内容
 
 **原理**
 

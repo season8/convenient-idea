@@ -1,7 +1,11 @@
-#set($personalName="write personal user name here")
-#set($companyName="write company user name here")
-## write your company project package prefixes here
-#set($companyPackagePrefixes=['com.xxx','org.xxx'])
+## person project author name
+#set($personalName="season8")
+## company project author name
+#set($companyName="chengj@133.cn")
+## company project package prefixes
+#set($companyPackagePrefixes=['com.huoli'])
+## company project package prefixes
+#set($companyProjects=['web-request','ticket-valid-api'])
 ## customize your note here
 #macro(notes $company)
 /**
@@ -16,8 +20,10 @@
 */
 #end
 ## check if it's a company project
+#set($project=${PROJECT_NAME})
 #set($package=${PACKAGE_NAME})
 #set($companyPackagePrefix='')
+#set($companyProject='')
 #set($company=false)
 #foreach($companyPackagePrefix in $companyPackagePrefixes)
     #set($p='')
@@ -33,6 +39,14 @@
     #if($p == $companyPackagePrefix)
         #set($company=true)
         #break
+    #end
+#end
+#if($company != true)
+    #foreach($companyProject in $companyProjects)
+        #if($project == $companyProject)
+            #set($company=true)
+            #break
+        #end
     #end
 #end
 #notes($company)
